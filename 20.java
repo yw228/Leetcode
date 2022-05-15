@@ -1,5 +1,9 @@
-// Using ASII table 
-class Solution {
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.HashMap;
+
+// Using ASII table
+class Solution20 {
     public boolean isValid(String s) {
         // make a dequ
         Deque<Integer> d = new ArrayDeque<>();
@@ -34,7 +38,7 @@ class Solution {
 
 // Method 2 
 // Using hash map
-class Solution {
+class Solution20_2 {
     HashMap<Character, Character> map = new HashMap<Character, Character>(){{
         put(']','[');
         put('}','{');
@@ -45,9 +49,9 @@ class Solution {
         for (int i =0 ; i < s.length();i++)
         {
             char c = s.charAt(i);
-            if (c == '{' || c == "[" || c == "("){ d.addLast(c)}
+            if (c == '{' || c == '[' || c == '('){ d.addLast(c);}
             else {
-                if (!d.isEmpty() && d.peekLast == map.get(c))
+                if (!d.isEmpty() && d.peekLast() == map.get(c))
                 {
                     d.pollLast();
                 }
